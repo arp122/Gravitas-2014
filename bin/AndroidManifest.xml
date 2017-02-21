@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.vit.gravitas2014"
+    android:versionCode="6"
+    android:versionName="2.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="18" />
+
+    
+    <uses-permission android:name="android.permission.INTERNET"/> 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <permission android:name="com.vit.gravitas2014.permission.C2D_MESSAGE"
+    android:protectionLevel="signature" />
+ <uses-permission android:name="com.vit.gravitas2014.permission.C2D_MESSAGE" />
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        
+
+        <activity
+            android:name="com.vit.gravitas2014.SplashActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.vit.gravitas2014.HomeActivity"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.vit.gravitas2014.Culturals"
+            android:label="Events"
+            android:parentActivityName="com.vit.gravitas2014.HomeActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.vit.gravitas2014.Sports"
+            android:label="Workshops"
+            android:parentActivityName="com.vit.gravitas2014.HomeActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.vit.gravitas2014.Fetching"
+            android:label="Fetching"
+            android:parentActivityName="com.vit.gravitas2014.HomeActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.vit.gravitas2014.Registration"
+            android:label="Registration"
+            android:parentActivityName="com.vit.gravitas2014.HomeActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.vit.gravitas2014.Proshows"
+            android:label="Proshows"
+            android:parentActivityName="com.vit.gravitas2014.HomeActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.vit.gravitas2014.Sponsors"
+            android:label="Sponsors"
+            android:parentActivityName="com.vit.gravitas2014.HomeActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.vit.gravitas2014.Contact"
+            android:label="Contact"
+            android:parentActivityName="com.vit.gravitas2014.HomeActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+         <activity
+            android:name="com.vit.gravitas2014.About_Grav"
+            android:label="About Gravitas"
+            android:parentActivityName="com.vit.gravitas2014.HomeActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.vit.gravitas2014.EventsList"
+            android:label="Events Gravitas"
+            
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.vit.gravitas2014.SearchResultsActivity"
+            android:label="Search Results"
+            android:parentActivityName="com.vit.gravitas2014.Culturals"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            
+        </activity>
+        <activity
+            android:name="com.vit.gravitas2014.SportsSearch"
+            android:label="Search Results"
+            android:parentActivityName="com.vit.gravitas2014.Sports"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.vit.gravitas2014.PrivacyPolicy"
+            android:label="Privacy Policy"
+            android:parentActivityName="com.vit.gravitas2014.HomeActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <meta-data android:name="com.google.android.gms.version"
+           android:value="@integer/google_play_services_version" />
+        
+        <receiver
+            android:name=".GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="com.vit.gravitas2014" />
+            </intent-filter>
+        </receiver>
+        <service android:name=".GcmIntentService" />
+    </application>
+
+</manifest>
